@@ -47,6 +47,21 @@ console.log(tianqi[1]);
 console.log(tianqi.Sunny);  //0
 console.log(tianqi.Rainy);  //1
 
+enum sextype{
+  boy,
+  girl
+}
+
+const hd = {
+  name: '啊啊啊',
+  sex:sextype.girl
+}
+console.log(hd);
+console.log(sextype.girl);
+
+console.log(sextype[0]);
+
+
 
 
 
