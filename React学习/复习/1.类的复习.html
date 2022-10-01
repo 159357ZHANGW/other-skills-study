@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    class Person{
+      //构造器方法 constructor用来接受传递过来的参数
+      constructor(name,age){
+        //构造器中的this指向——类的实例对象 new的是谁 实例就是谁
+        this.name = name;
+        this.age = age
+      }
+      speak() {
+        // speak方法放在哪里？——类的原型对象上，且供实例使用
+        console.log(`我是${this.name},我今年${this.age}岁`);
+      }
+    }
+
+    class Asan extends Person{
+      constructor(name,age,skill){
+        super(name,age);
+        this.skill = skill;
+      }
+      skills(){
+        console.log(`我会${this.skill}`); 
+      }
+    }
+
+    const zs = new Person('张三',19);
+    const abu = new Asan('阿布',1000,'打麻将')
+    abu.skills()
+  </script>
+</body>
+</html>

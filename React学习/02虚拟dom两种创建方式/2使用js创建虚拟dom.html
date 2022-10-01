@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="test"></div>
+
+  <script src="../js/react.development.js"></script>
+  <script src="../js/react-dom.development.js"> </script>
+
+  <script type="text/javascript">
+    //  下面是错的 span标签 无效   所以一旦用到标签内部嵌套标签 使用原生的js很复杂的 所以使用jsx 很方便 直接写标签
+    // const vdom = React.createElement('h1',{id:'title'},'<span>hello react!</span>')
+    const vdom = React.createElement('h1',{id:'title'},React.createElement('span',{},'hello react'))
+    ReactDOM.render(vdom,document.getElementById('test'))
+</script>
+
+</body>
+</html>
