@@ -14,16 +14,23 @@
   <script src="../js/react.development.js"></script>
   <script src="../js/react-dom.development.js"> </script>
   <script src="../js/babel.min.js"></script>
+  <script src="../js/prop-types.js"></script>
 
   <script type="text/babel">    //此处script中的代码都是jsx 并且靠babel翻译
-   
-   class Mycomponent extends React.Component{
-    render(){
-      return <h2>今天的天气很{}</h2>
+ 
+    class Weather extends React.Component{
+      state = {isHot:false,wind:'微风'}
+
+      render(){
+        return <h1 onClick={this.changeWeather}>今天的天气{this.state.isHot ? '炎热':'凉爽'} {this.state.wind}</h1>
+      }
+
+      changeWeather=()=>{
+        const isHot = this.state.isHot;
+        this.setState({isHot:!isHot})
+      }
     }
-   }
-  
-   ReactDOM.render(<Mycomponent/>,document.getElementById('test'))
+    ReactDOM.render(<Weather/>,document.getElementById('test'))
   </script>
 </body>
 
