@@ -20,7 +20,6 @@
  
     class Weather extends React.Component{
       state = {isHot:false,wind:'微风'}
-
       render(){
         return <h1 onClick={this.changeWeather}>今天的天气{this.state.isHot ? '炎热':'凉爽'} {this.state.wind}</h1>
       }

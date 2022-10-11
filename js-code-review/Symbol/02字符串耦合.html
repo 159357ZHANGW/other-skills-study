@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    // 下面class01中会出现相同 user2的李四 覆盖 user1的李四
+
+    // let user1 = "李四"
+    // let user2 = "李四"
+    // let class01 = {
+    //   [user1]:{math:55,english:66},
+    //   [user2]:{math:55,english:55}
+    // }
+    // console.log(class01);
+    
+    let user01 = {
+      name:"李四",
+      key:Symbol()
+    }
+    let user02 = {
+      name:"李四",
+      key:Symbol()
+    }
+
+    let grade = {
+      [user01.key]:{a:100,b:200},
+      [user02.key]:{a:66,b:33}
+    }
+    console.log(grade);
+    console.log(grade[user01.key]);
+  </script>
+</body>
+</html>

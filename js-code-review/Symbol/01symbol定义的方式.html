@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+ <script>
+  // Symbol 相当于：特殊的字符串，永远不会重复的字符串  引号中的是描述
+  let hd = Symbol("后盾人")
+  let edu = Symbol('网址为xxxxxxxxxx')
+
+  // console.log(hd.toString());
+  // console.log(edu.description);
+  // let a = Symbol('后端人')
+  // let b = Symbol('后端人')
+  // console.log(a == b);
+    
+     
+  // 使用symbol.for后 描述的内容系统会在内存中记录 下次就可以重复使用描述的内容
+  // 根据描述获取Symbol，如果不存在则新建一个Symbol
+
+  //   使用Symbol.for会在系统中将Symbol登记
+  //   使用Symbol则不会登记
+
+  // 一次的描述的全局的 
+  let aa = Symbol.for('asdf')
+  // 当使用Symbol.for 输入相同的描述时，第二次要描述相同的symbol时候 不会再重复创建， 
+  //  而是直接 引用内存中第一次申明的symbol
+  let bb = Symbol.for('asdf');
+  console.log(aa == bb);
+
+
+
+  // Symbol.keyFor 根据使用Symbol.for登记的Symbol返回描述，如果找不到返回undefined 。
+  let p1 = Symbol.for('person1')
+  console.log(Symbol.keyFor(p1)); //返回的是对应Symbol的描述
+
+  let edu0 = Symbol.for('person2')
+  console.log(Symbol.keyFor(edu0));
+
+  // 普通的Symbol 不能通过Symbol.keyFor返回描述
+  let p2 = Symbol('到达');
+  console.log(Symbol.keyFor(p2));
+
+  
+
+ </script>  
+</body>
+</html>

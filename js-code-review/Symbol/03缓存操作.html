@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+   class cache{
+    static data = {}
+    static set(name,val){
+      this.data[name] = val;
+    }
+    static get(name,val){
+      return this.data[name];
+    }
+   }
+   let user = {
+     name:'用户1',
+     key:Symbol('缓存')
+   }
+   let cart = {
+      name: '购物车',
+      key: Symbol('缓存')
+   }
+
+  cache.set(user.key,user)
+  cache.set(cart.key,cart)
+  console.log(cart.key == user.key);
+  // console.log(user.key.description);
+  // console.log(user.key.toString());
+  // console.log(cache.get(user.key));
+
+
+
+  </script>
+</body>
+</html>
