@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let arr = ['a','b','c','d'];
+    console.log(arr.reverse());
+    let num = [155,115,12,21,95,65];
+    console.log(num.sort((a,b)=>a-b));
+    console.log(num.sort((a,b)=>b-a));
+
+   let lessons = [
+      { title: "媒体查询响应式布局", click: 78 },
+      { title: "FLEX 弹性盒模型", click: 12 },
+      { title: "MYSQL多表查询随意操作", click: 99 }
+    ];
+
+    let sortlessons = lessons.sort((v1,v2)=>v1.click-v2.click);
+    console.log(sortlessons);
+
+    let fanless = lessons.sort((a1,a2)=>a2.click-a1.click)
+    console.log(fanless);
+</script>
+</body>
+</html>

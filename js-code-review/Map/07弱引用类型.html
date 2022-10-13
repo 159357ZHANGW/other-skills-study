@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+     let hd = {name:"后盾人"};
+     cms = hd;
+     let test = new WeakMap();
+     test.set(hd,"houdunren"); 
+     hd = null;
+     cms = null;
+     console.log(test); //注意 虽然前面两个hd和cms对对象的引用都去除了 但是这个test的中还是有对象的值
+     setTimeout(() => {    //发生上面的情况是因为 垃圾回收的有时间的 一下的定时器 在10s后 test中没有对象的值
+      console.log(test);
+     }, 10000); 
+  </script>
+  
+</body>
+</html>

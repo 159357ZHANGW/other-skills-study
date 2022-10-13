@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    // const s = new Set(["val1","val2","val3"])
+    // console.log(s);
+    // console.log(s.values());
+    // console.log(s[Symbol.iterator]);
+    // s.forEach((a,b)=>{
+    //   console.log(`${a}=>${b}`);
+    // })
+    
+    // let arr = ['a','b','c']
+    // arr.forEach((a,b)=>{
+    //   console.log(`${a}=>${b}`);
+    // })
+    // for(let item of s.entries()){
+    //   console.log(item);
+    // }
+
+    // let str = new String("val")
+    // console.log(typeof str);
+
+    const hd = new WeakSet();
+      let arr = ["hdcms"];
+      hd.add(arr);
+      console.log(hd.has(arr));
+
+      arr = null;
+      console.log(hd); //WeakSet {Array(1)}
+     
+      setTimeout(() => {
+        console.log(hd);
+      }, 1000);
+
+ </script>
+   
+</body>
+</html>

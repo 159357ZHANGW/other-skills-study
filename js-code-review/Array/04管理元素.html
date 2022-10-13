@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let arr = [1,"后盾人","hdcms"];
+    arr[1] = '后盾人编程';
+    console.log(arr);
+
+    arr[arr.length] = 'houdunren.com';
+    console.log(arr);
+    arr.push("push");
+    arr.pop()
+    arr.unshift("aa")
+    arr.shift()
+    arr.splice(2,1,"a","b","c");
+    let newarr = [...arr.slice(-2)];
+    let newarr1 = arr.slice(-3,-1)
+     
+
+
+    console.log(arr);
+    console.log(newarr);   //'c' 'houdunren.com'
+    console.log(newarr1); //'b' 'c'
+    console.log(arr);
+    console.log(arr.splice(2,1,"zero")); //splice返回值为删除的元素
+
+    // 清空元素
+    let user = [{name:'zs'},{age:18}];
+    let cms = user;
+    user = []
+    console.log(user);
+    let exap = cms;
+    console.log(cms);
+    console.log(exap);
+
+    cms.length = 0;
+    console.log(cms);
+    console.log(exap);
+    console.log(exap.splice(0,exap.length));
+
+    
+  </script>
+</body>
+</html>

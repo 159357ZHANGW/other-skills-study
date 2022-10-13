@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .hide{
+    display: none;
+  }
+</style>
+<body>
+  <button message="后盾人">button</button>
+  <button message="hdcms">button</button>
+  <div>hdcms</div>
+  <div>houdunren</div>
+  <script>
+      let arr = ['a','b','c'];
+      console.log(arr);
+      console.log(arr.toString());
+      console.log(String(arr));
+      console.log(arr.join('-'));
+
+  //  使用Array.from可将类数组转换为数组，类数组指包含 length 属性或可迭代的对象。
+      let hd = "后盾人";
+      console.log(Array.from(hd)); //(3) ['后', '盾', '人']
+
+      // 如果对象包含length属性也可以转换为数组
+      let user = {
+        0:'后盾人',
+        '1':18,
+        length:2
+      };
+      console.log(user);
+      console.log(Array.from(user));
+    let btns = document.querySelectorAll('button');
+    console.log(btns);
+    // DOM 元素转换为数组后来使用数组函数，第二个参数类似于map 函数的方法，可对数组元素执行函数处理
+    Array.from(btns,(item)=>{
+      item.style.backgroundColor = 'red'
+    })
+    
+    let divs = document.querySelectorAll('div');
+
+    [...divs].map(function(div){
+      div.addEventListener("click",function(){
+        // classList.toggle方法允许根据当前的class类属性值添加或删除类名
+          // 如果想删除元素中的类名，使用toggle方法将类名删除 
+          // 如果元素中没有对应的类名,使用toggle方法将类名添加给该元素 
+          // 您可以通过它返回的值知道该toggle()方法是否添加或删除了一个类。如果类名被删除，toggle()将返回false.添加类名后，将返回true
+          this.classList.toggle("hide");
+
+      })
+    })
+
+  </script>
+</body>
+</html>

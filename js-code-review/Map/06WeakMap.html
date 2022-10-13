@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+//     WeakMap 对象是一组键 / 值对的集
+//       键名必须是对象
+//       WeaMap对键名是弱引用的，键值是正常引用
+//       垃圾回收不考虑WeaMap的键名，不会改变引用计数器，键在其他地方不被引用时即删除
+//        因为WeakMap 是弱引用，由于其他地方操作成员可能会不存在，所以不可以进行forEach()for of遍历等操作
+//       也是因为弱引用，WeaMap 结构没有keys()，values()，entries()等方法 也没有size 属性
+//       当键的外部引用删除时，希望自动删除数据时使用 WeakMap
+      
+    let arr = [];
+    let map = new WeakMap();
+    map.set(arr,"hdcms.com")
+    console.log(map.has(arr));
+    console.log(map.size);
+    map.delete(arr)
+    console.log(map);
+    console.log(map.has(arr));
+    map.set(arr,"dasda")
+    console.log(map.size); //不行
+    // console.log(map.keys()); //没有keys() values()
+    map.set(arr)
+  //  for(let item of map){   //WeakMap不可迭代
+  //    console.log(item);
+  //   }
+</script>
+  
+</body>
+</html>

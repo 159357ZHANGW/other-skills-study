@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div dsc="后盾人">houdunren</div>
+  <div dsc="开源系统">hdcms</div>
+
+  <script>
+   const divMap = new Map();
+   const divs = document.querySelectorAll("div");
+   divs.forEach((item)=>{
+    divMap.set(item,{
+      content:item.getAttribute("dsc")
+    })
+   })
+   console.log(divMap);
+  //  divMap.forEach((config,elem)=>{  })
+
+  divMap.forEach((config,elem)=>{
+    elem.addEventListener("click",function(){
+      alert(divMap.get(this).content)
+    })
+  })
+  </script>
+</body>
+</html>

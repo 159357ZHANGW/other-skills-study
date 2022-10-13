@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    console.log(new Array(1,"后盾热",'hdcms'));
+    const array = ["hdcms","houdunren"]
+
+    const array2 = [["hdcms","houdunren"],["houdunren","aaaa","vvvvv"]]
+    console.log(array2[1][1]);
+
+    array2.push("zhangsan");
+    console.log(array2);
+
+    array[2] = "wangwu";
+    console.log(array);
+    console.log(array.length);
+    let hd = new Array(3);
+    console.log(hd.length);
+
+    let hdr = ["后盾人"];
+    hdr[3] = "hdcms";
+    console.log(hdr);
+    console.log(hdr.length);
+
+    // 类型检测      
+    console.log(Array.isArray([1,5,6,98,2]));
+    console.log(Array.isArray(5));
+
+    // let arr = [1,"后盾人","hdcms"];
+    // console.log(arr);
+    // arr[arr.length] = "houdunren.com";
+    // console.log(arr);
+    // let newarr = ["houdunren"];
+    // newarr.push(...arr);
+    // console.log(newarr);
+    // console.log(arr.push('打麻将'));
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 用于存储任何类型的唯一值，无论是基本类型还是对象引用。
+    //   只能保存值没有键名
+    //   严格类型检测如字符串数字不等于数值型数字
+    //   值是唯一的
+    //   遍历顺序是添加的顺序，方便保存回调函数
+   
+    let obj = { 1:"asdas",'1':'ffffff'}
+    console.log(obj["1"]);
+
+    // 使用对象做为键名时，会将对象转为字符串后使用
+    let hd = {[obj]:"后盾人"};
+    console.log(hd);
+    
+    console.log(hd[obj]);
+    console.log(hd[obj.toString()]);2
+
+    let p1 = new Set(['后盾人','hdr'])
+    console.log(p1.values());
+    console.log(p1.keys());
+
+    let test = new Set();
+    test.add(1);
+    test.add('1');
+    console.log(test.size);
+    console.log(test.delete('1'));
+    console.log(test.has('1'));
+    test.clear();
+    console.log(test.values());
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    let arr = ['a','b','c']
+    // 数组转字符串
+    console.log(arr.join(''));
+    //字符串转数组
+    let str = 'abcde';
+    // let num = "12,23,24,36"
+    let num = "12-23-24-36"
+    console.log(str.split(","));    
+    console.log(num.split("-"));  //split引号中的符号刚好对应num中的间隔符号，把他们分开
+    
+    console.log(arr.concat(str,num));
+    
+    // 使用 copyWithin 从数组中复制一部分到同数组中的另外位置。
+    //   语法说明
+    //   array.copyWithin(target, start, end)
+    //   参数说明
+    //   参数	描述
+    //   target	必需。复制到指定目标索引位置。
+    //   start	可选。元素复制的起始位置。
+    //   end	可选。停止复制的索引位置(默认为 array.length)。如果为负值，表示倒数。
+    console.log(arr.copyWithin(2,0,1));
+  
+    console.log(arr.indexOf('a'));
+    console.log(arr.lastIndexOf('b'));
+    console.log(arr.includes('a'));
+    console.log(arr.find());
+  
+  
+  
+  </script>
+</body>
+</html>

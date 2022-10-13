@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 去除字符串的重复
+    let str = new Set("houdunren");
+    console.log([...str].join(""));
+    // 去除数组的重复
+    let arr = [12,3,5,3,665,6,6,9];
+    console.log([...new Set(arr)]);
+
+
+    // 遍历数据  
+      //  迭代器和生成器？
+      // 可以使用keys()/values()/entries()都可以迭代对象
+      let hd = new Set(["zhangsan","zs"]);
+      // console.log(hd.values(hd));
+      // console.log(hd.keys(hd));
+      // console.log(hd.entries()); //遍历键值对
+
+      // 数组的迭代器使用
+      let arr1 = ['a','b','c','d',"person"] 
+       for(const [key,value] of arr1.entries()){
+        console.log(`index:${key} => ${value}`);  //index:0 => a  index:1 => b 
+       }
+       const ttest = ["houdunren","person"]
+      
+       const iterator = hd.entries();
+       console.log(iterator);
+      //  let {done,value:[k,v]} = iterator.next()
+      //  console.log(v);
+      
+      
+      //forEach/for of 遍历set数据,默认使用values方法创建迭代器 
+      let set = new Set(arr);
+      console.log('--forEach--');
+      set.forEach((item,key)=> console.log(item,key))
+     console.log("--for of--");
+      for(let item of set.values()){
+        console.log(item);
+      }
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function hd(site,...args){
+      console.log(site,args); 
+    }
+    hd("aa",12,55,33)
+
+    // 剩余解构指用一个变量来接收剩余参数
+    let [a,...b] = ['后盾人','houdunren','hdcms'];
+    console.log(a,b);
+
+    // 字符串解构
+    const [...str] = "dasdasda"; //(8) ['d', 'a', 's', 'd', 'a', 's', 'd', 'a']
+    console.log(str);
+  
+    let [name,url] = ["houdunren",'hdcms'];
+
+    let we = 'aa';
+    console.log(typeof we);
+    [web,url] = [33,'bb'];
+    console.log(typeof web);
+    console.log(web);
+    console.log(web,url);
+    
+    // 为变量设置默认值
+    let [nm, site = 'hdcms'] = ['后盾人'];
+      console.log(site); //hdcms
+      console.log(nm);
+</script>
+</body>
+</html>

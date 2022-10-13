@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 交
+    let aa = new Set(['a','b','c','d','c'])
+    let bb = new Set(['b','c','d','e','c'])
+    console.log([...bb].filter((item)=> aa.has(item))); 
+    console.log(bb);
+    // 差集 在b中有但是在a中没有的元素
+    console.log([...bb].filter((item)=>!aa.has(item)));
+
+    // 并集 
+    // 下面这种方法会把aa和bb中单独的元素并入newarr 但是不能保证aa与bb没有重复元素
+    // let newarr = [...aa,...bb]  // ['a', 'b', 'c', 'd', 'b', 'c', 'd', 'e']
+   
+    let newarr1 = new Set([...aa,...bb])
+    console.log(newarr1);
+   
+
+    
+    // 如果给set传入的是对象 一旦在遍历时修改对象的内容，最终set的配置会变化
+    // 如果给set传入的是数组 一旦在遍历时修改数组的内容，最终set的配置不变
+    
+    const s1 = new Set(["val1"]);
+
+    for(let value of s1.values()){
+      value = "aaaa";
+      console.log(value);   //aaaa
+      console.log(s1.has("val1"));  //true
+    }
+    console.log(s1); //Set(1) {'val1'}
+    const valobj = {id:11};
+    const s2 = new Set([valobj]);
+
+    for(let item of s2){
+      item.id = "newval";
+      console.log(item);   //{id: 'newval'}
+      console.log(s2.has(valobj));  //true
+    }
+    console.log(valobj); //{id: 'newval'}
+
+
+
+
+
+
+
+
+     
+  </script>
+</body>
+</html>

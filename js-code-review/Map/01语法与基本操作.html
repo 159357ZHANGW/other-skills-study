@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // WeakMap的key 只能是引用类型 不能是字符串和数字
+     let m = new Map([['aa',"啊啊"],['bb',"版本"]]);
+     console.log(m.get("aa"));
+     m.set("cc","此处").set("dd","到达")
+     console.log(m);
+     let map = new Map();
+     let obj = {
+      name:"后盾人"
+     };
+     map.set(obj,"houdunren").set("name","hdcms");
+     console.log(map.entries());
+
+     const hd = new Map();
+    let newarr = [...m]
+    console.log(newarr);
+     newarr.forEach(([key,value])=>{
+        hd.set(key,value)
+    })
+    console.log(hd);
+
+    let arr = ["后盾人"];
+    const ahd = new Map();
+    ahd.set(arr,"houdunren.com");
+    console.log(ahd.get(arr));
+    console.log(ahd["后盾人"]);
+    console.log(ahd.size);
+    console.log(ahd.has(arr));
+
+    let mmap = new Map();
+    mmap.set(obj,"houdunren.com");
+    console.log(mmap.get(obj));
+    mmap.delete(obj);
+    console.log(mmap.get(obj));
+    let obj2 = {
+      title:"hdcms.com"
+    }
+
+    mmap.set(obj2,{
+      title:'内容管理系统'
+    })
+    console.log(mmap.size);
+    console.log(mmap.clear());
+    console.log(mmap.size);
+    
+
+ </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let hd = new Map([["houdunren", "后盾人"], ["hdcms", "开源系统"]]);
+    console.log([...hd]);
+    console.log(...hd);
+    console.log(...hd.keys());
+    console.log(...hd.values());
+    console.log(...hd.entries());
+
+    // 检索包含
+    let newhd = [...hd].filter((item)=>{
+     return item.includes("后盾人")
+    });
+    hd = new Map(newhd);
+    console.log(...hd);
+    
+  </script>
+</body>
+</html>
